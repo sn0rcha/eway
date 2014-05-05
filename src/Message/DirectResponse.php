@@ -34,6 +34,10 @@ class DirectResponse extends AbstractResponse
 
     public function getTransactionReference()
     {
+        if (empty($this->data->ewayTrxnNumber)) {
+            return null;
+        }
+        
         return (int) $this->data->ewayTrxnNumber;
     }
 
